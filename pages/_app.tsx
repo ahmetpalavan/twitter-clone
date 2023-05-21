@@ -1,11 +1,17 @@
 import type { AppProps } from "next/app";
+import Layout from "../components/Layout";
 import "../styles/globals.css";
-import Layout from "../components/Layout"
+import LoginModal from "@/modals/LoginModalnext-13";
+import { RegisterModal } from "@/modals/RegisterModalnext-13";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <LoginModal />
+      <RegisterModal />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
