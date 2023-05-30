@@ -2,7 +2,10 @@ import Input from "@/components/Inputnext-13";
 import Modal from "@/components/Modalnext-13";
 import useLoginModal from "@/hooks/useLoginModalnext-13";
 import useRegisterModal from "@/hooks/useRegisterModalnext-13";
+import axios from "axios";
+import { signIn } from "next-auth/react";
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -21,9 +24,21 @@ export const RegisterModal = () => {
   const onSubmit = async () => {
     try {
       setIsLoading(true);
+      await axios.post("api/register", {
+        email,
+        password,
+        username,
+        name,
+      });
+      toast.success("Register success");
+      signIn("credentials", {
+        email,
+        password,
+      });
       registerModal.close();
     } catch (err) {
       console.log(err);
+      toast.error("Register failed");
     } finally {
       setIsLoading(false);
     }
