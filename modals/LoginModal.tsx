@@ -28,7 +28,7 @@ const LoginModal = () => {
   }, [loginModal]);
 
   const bodyContent = (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={isLoading} />
       <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} disabled={isLoading} />
     </div>
@@ -38,7 +38,7 @@ const LoginModal = () => {
     <div className="text-neutral-500 text-center mt-4">
       <p className="text-white">
         First time using Twitter? {""}
-        <span className="text-red-200 cursor-pointer underline hover:underline" onClick={onToggle}>
+        <span className="text-red-200 cursor-pointer underline hover:underline " onClick={onToggle}>
           Create an account
         </span>
       </p>
