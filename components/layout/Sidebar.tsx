@@ -8,33 +8,35 @@ import SidebarTweetButton from "./SidebarTweetButton";
 import { useCurrentUser } from "@/hooks/useCurrentUsernext-13";
 import { signOut } from "next-auth/react";
 
-const items = [
-  {
-    label: "Home",
-    href: "/",
-    icon: BsHouseFill,
-  },
-  {
-    label: "Notifications",
-    href: "/notifications",
-    icon: BsBellFill,
-  },
-  {
-    label: "Profile",
-    href: "/profile",
-    icon: FaUser,
-  },
-];
+
 
 const Sidebar = () => {
-  const { currentUser } = useCurrentUser();
+  const { data: currentUser } = useCurrentUser();
+  const items = [
+    {
+      label: "Home",
+      href: "/",
+      icon: BsHouseFill,
+    },
+    {
+      label: "Notifications",
+      href: "/notifications",
+      icon: BsBellFill,
+      auth: true,
+    },
+    {
+      label: "Profile",
+      href: `users/${currentUser?.id}`,
+      icon: FaUser,
+    },
+  ];
   return (
     <div className="col-span-1 h-full pr-4 md:pr-6">
       <div className="flex flex-col ">
         <div className="space-y-2 lg:w-[230px]">
           <SidebarLogo />
           {items.map((item) => (
-            <SidebarItem href={item.href} label={item.label} icon={item.icon} key={item.href} />
+            <SidebarItem href={item.href} label={item.label} icon={item.icon} key={item.href} auth={item.auth} />
           ))}
           {currentUser && <SidebarItem label="Logout" icon={BiLogOut} onClick={() => signOut()} />}
           <SidebarTweetButton />
