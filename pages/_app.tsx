@@ -5,11 +5,13 @@ import LoginModal from "@/modals/LoginModalnext-13";
 import { RegisterModal } from "@/modals/RegisterModalnext-13";
 import { Toaster } from "react-hot-toast";
 import { SessionProvider } from "next-auth/react";
+import EditModal from "@/modals/EditModalnext-13";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider session={pageProps.session}>
       <Toaster />
+      <EditModal />
       <LoginModal />
       <RegisterModal />
       <Layout>
