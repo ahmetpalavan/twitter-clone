@@ -1,33 +1,40 @@
 import bcrypt from "bcrypt";
-import NextAuth from "next-auth";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import prisma from "../../../libs/prismadb";
 
-export default NextAuth({
+export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
-      name: "Credentials",
+      name: "credentials",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" },
+        email: { label: "email", type: "text" },
+        password: { label: "password", type: "password" },
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("Please enter your credentials");
+          throw new Error("Invalid credentials");
         }
+
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+          where: {
+            email: credentials.email,
+          },
         });
-        if (!user || !user.hashedPassword) {
-          throw new Error("Incorrect email or password");
+
+        if (!user || !user?.hashedPassword) {
+          throw new Error("Invalid credentials");
         }
-        const isValid = await bcrypt.compare(credentials.password, user.hashedPassword);
-        if (!isValid) {
-          throw new Error("Incorrect email or password");
+
+        const isCorrectPassword = await bcrypt.compare(credentials.password, user.hashedPassword);
+
+        if (!isCorrectPassword) {
+          throw new Error("Invalid credentials");
         }
+
         return user;
       },
     }),
@@ -40,6 +47,6 @@ export default NextAuth({
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
 
-// Compare this snippet from pages/api/auth/[...nextauth].ts:
+export default NextAuth(authOptions);
