@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import prisma from "../../../libs/prismadb"
+import prisma from "../../../libs/prismadb";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         id: userId,
       },
     });
-    const followeCount = await prisma?.user.count({
+    const followersCount = await prisma?.user.count({
       where: {
         followingIds: {
           has: userId,
@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
     return res.status(200).json({
       ...exists,
-      followeCount,
+      followersCount,
     });
   } catch (error) {
     console.log(error);
