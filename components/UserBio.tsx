@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import Button from "./Button";
 import { BiCalendar } from "react-icons/bi";
 import useEditModal from "@/hooks/useEditModalnext-13";
+import useFollow from "@/hooks/useFollownext-13";
 
 interface UserBioProps {
   userId: string;
@@ -13,6 +14,7 @@ interface UserBioProps {
 const UserBio = ({ userId }: UserBioProps) => {
   const { data: currentUser } = useCurrentUser();
   const { data: fetchedUser } = useUser(userId);
+  const { isFollowing, toggleFollow } = useFollow(userId);
 
   const editModal = useEditModal();
 
@@ -29,7 +31,7 @@ const UserBio = ({ userId }: UserBioProps) => {
         {currentUser?.id === userId ? (
           <Button onClick={editModal.openModal} label="Edit Profile" secondary />
         ) : (
-          <Button secondary label="Follow" />
+          <Button onClick={toggleFollow} label={isFollowing ? "Unfollow" : "Follow"} secondary={!isFollowing} outline={isFollowing} />
         )}
       </div>
       <div className="mt-8 px-4">
@@ -44,7 +46,7 @@ const UserBio = ({ userId }: UserBioProps) => {
         </div>
         <div className="flex flex-row items-center mt-4 gap-6">
           <div className="flex flex-row gap-1 items-center">
-            <p className="text-white font-bold">{fetchedUser?.followingIds?.length}</p>
+            <p className="text-white font-bold">{fetchedUser?.followingIds?.length || 0}</p>
             <p className="text-neutral-500">Following</p>
           </div>
           <div className="flex flex-row gap-1 items-center">
