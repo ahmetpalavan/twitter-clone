@@ -10,7 +10,6 @@ import { toast } from "react-hot-toast";
 
 const EditModal = () => {
   const { data: currentUser } = useCurrentUser();
-  console.log(currentUser, "currentUser");
 
   const { mutate: editUser } = useUser(currentUser?.id);
   const editModal = useEditModal();
