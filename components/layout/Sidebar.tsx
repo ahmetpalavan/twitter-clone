@@ -8,8 +8,6 @@ import SidebarTweetButton from "./SidebarTweetButton";
 import { useCurrentUser } from "@/hooks/useCurrentUsernext-13";
 import { signOut } from "next-auth/react";
 
-
-
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
   const items = [
@@ -23,6 +21,7 @@ const Sidebar = () => {
       href: "/notifications",
       icon: BsBellFill,
       auth: true,
+      alert: currentUser?.hasNotification,
     },
     {
       label: "Profile",
@@ -36,7 +35,7 @@ const Sidebar = () => {
         <div className="space-y-2 lg:w-[230px]">
           <SidebarLogo />
           {items.map((item) => (
-            <SidebarItem href={item.href} label={item.label} icon={item.icon} key={item.href} auth={item.auth} />
+            <SidebarItem alert={item.alert} href={item.href} label={item.label} icon={item.icon} key={item.href} auth={item.auth} />
           ))}
           {currentUser && <SidebarItem label="Logout" icon={BiLogOut} onClick={() => signOut()} />}
           <SidebarTweetButton />
