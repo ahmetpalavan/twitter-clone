@@ -1,7 +1,7 @@
 
 # Twitter Clone
 
-Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bir web uygulamasıdır.
+Twitter'ın temel özelliklerini taklit eden veya benzer bir kullanıcı deneyimi sunan bir web sitesi veya uygulamadır. Bu tür klonlar, kullanıcıların kısa mesajlar (tweet'ler) paylaşmasına, diğer kullanıcıların bu mesajları beğenmesine, retweetlemesine ve yanıtlamasına olanak tanır.
 
 ## Özellikler
 
@@ -17,8 +17,12 @@ Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bi
 - Zustand
 - TypeScript
 - React Router
-- React-dropzone
+- react-dropzone
 - swr
+- next-auth
+- axios
+- bcrypt
+- Tailwind-css
 
 ## Nasıl Kullanılır?
 
@@ -30,7 +34,7 @@ https://github.com/ahmetpalavan/twitter-clone.git
 2. Proje klasörüne gidin: 
 
 ```bash
- `cd twitter`
+ `cd twitter-clone`
  ```
 3. Gerekli paketleri yükleyin: 
 
