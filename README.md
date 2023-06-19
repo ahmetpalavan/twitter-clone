@@ -22,7 +22,7 @@ Twitter'ın temel özelliklerini taklit eden veya benzer bir kullanıcı deneyim
 - Next-auth
 - Axios
 - Bcrypt
-- Tailwind-css
+- Tailwind CSS
 - Prisma
 - MongoDB
 
