@@ -13,8 +13,8 @@ Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bi
 
 ## Kullanılan Teknolojiler
 
-- **React**
-- **Zustand**
+- **React
+- **Zustand
 - **TypeScript
 - **React Router
 - **React-dropzone
