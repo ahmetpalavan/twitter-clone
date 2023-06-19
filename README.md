@@ -23,9 +23,22 @@ Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bi
 ## Nasıl Kullanılır?
 
 1. Proje deposunu klonlayın: 
-2. ```bash
+
+ ```bash
 https://github.com/ahmetpalavan/twitter-clone.git
 ```
-2. Proje klasörüne gidin: `cd twitter`
-3. Gerekli paketleri yükleyin: `npm install`
-5. Geliştirme sunucusunu başlatın: `npm start`
+2. Proje klasörüne gidin: 
+
+```bash
+ `cd twitter`
+ ```
+3. Gerekli paketleri yükleyin: 
+
+ ```bash
+ `npm install`
+ ```
+4. Geliştirme sunucusunu başlatın: 
+
+ ```bash
+ `npm start`
+ ```
