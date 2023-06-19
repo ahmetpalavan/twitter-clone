@@ -17,12 +17,14 @@ Twitter'ın temel özelliklerini taklit eden veya benzer bir kullanıcı deneyim
 - Zustand
 - TypeScript
 - React Router
-- react-dropzone
+- React-dropzone
 - Swr
 - Next-auth
 - Axios
 - Bcrypt
 - Tailwind-css
+- Prisma
+- MongoDB
 
 ## Nasıl Kullanılır?
 
