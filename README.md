@@ -18,10 +18,10 @@ Twitter'ın temel özelliklerini taklit eden veya benzer bir kullanıcı deneyim
 - TypeScript
 - React Router
 - react-dropzone
-- swr
-- next-auth
-- axios
-- bcrypt
+- Swr
+- Next-auth
+- Axios
+- Bcrypt
 - Tailwind-css
 
 ## Nasıl Kullanılır?
