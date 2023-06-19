@@ -13,12 +13,12 @@ Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bi
 
 ## Kullanılan Teknolojiler
 
-- **React
-- **Zustand
-- **TypeScript
-- **React Router
-- **React-dropzone
-- **swr
+- React
+- Zustand
+- TypeScript
+- React Router
+- React-dropzone
+- swr
 
 ## Nasıl Kullanılır?
 
