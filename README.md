@@ -5,11 +5,11 @@ Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bi
 
 ## Özellikler
 
-- **Kullanıcı kaydı oluşturma ve giriş yapma
-- **Tweet gönderme ve silme
-- **Tweetleri beğenme ve beğenileri geri alma
-- **Diğer kullanıcıları takip etme ve takibi bırakma
-- **Ana sayfada son tweetlerin görüntülenmesi
+- Kullanıcı kaydı oluşturma ve giriş yapma
+- Tweet gönderme ve silme
+- Tweetleri beğenme ve beğenileri geri alma
+- Diğer kullanıcıları takip etme ve takibi bırakma
+- Ana sayfada son tweetlerin görüntülenmesi
 
 ## Kullanılan Teknolojiler
 
@@ -22,7 +22,7 @@ Spotify Clone, popüler müzik platformu Spotify'ın arayüzünü taklit eden bi
 
 ## Nasıl Kullanılır?
 
-1. Proje deposunu klonlayın: `git clone https://github.com/ahmetpalavan/spotify-clone.git`
-2. Proje klasörüne gidin: `cd spotify`
+1. Proje deposunu klonlayın: `https://github.com/ahmetpalavan/twitter-clone.git`
+2. Proje klasörüne gidin: `cd twitter`
 3. Gerekli paketleri yükleyin: `npm install`
 5. Geliştirme sunucusunu başlatın: `npm start`
