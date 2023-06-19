@@ -13,7 +13,7 @@ Twitter'ın temel özelliklerini taklit eden veya benzer bir kullanıcı deneyim
 
 ## Kullanılan Teknolojiler
 
-- React
+- Next.js
 - Zustand
 - TypeScript
 - React Router
